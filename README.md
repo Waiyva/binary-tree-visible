@@ -24,7 +24,7 @@ To practise algorithm quicker, code Visual binary tree for ready
 
 1. use tool **go get**
 
-> go get github.com/waiyva/binary-tree-printer
+> go get -u github.com/waiyva/binary-tree
 
 2. download code to your $GOPATH
 
@@ -32,58 +32,87 @@ To practise algorithm quicker, code Visual binary tree for ready
 
 ## <span id="head4"> Example</span>
 
-```go
-import "github.com/waiyva/binary-tree-printer"
+1. You can use string with ' , '
 
-func main() {
-  btprinter.PrintTree("1,2,3")
-}
-```
+   1. 
 
-```
-  1  
- / \ 
-2   3
-```
+   ```go
+   import "github.com/waiyva/binary-tree/btprinter"
+   
+   func main() {
+   	btprinter.PrintTree("1,2,3")
+   }
+   ```
+
+   ```
+     1  
+    / \ 
+   2   3
+   ```
+
+   
+
+   ```go
+   import "github.com/waiyva/binary-tree/btprinter"
+   
+   func main() {
+     btprinter.PrintTree("1,2,3,4,5,#,#,6,7,8,1,#,#,#,#,#,#,2,3,4,5,6,7,8,9,10,11,12,13,14,15")
+   }
+   ```
+
+   ```
+           1              
+          / \             
+         2   3            
+        / \               
+       /   \              
+      4     5             
+     / \   / \            
+    6   7 8   1           
+             / \          
+            /   \         
+           /     \        
+          /       \       
+         /         \      
+        2           3     
+       / \         / \    
+      /   \       /   \   
+     4     5     6     7  
+    / \   / \   / \   / \ 
+   8   9 10 11 12 13 14 15
+   
+   ```
+
+   
 
 
 
+2. You can also use slice like the following
 
+   ```go
+   import "github.com/waiyva/binary-tree/btprinter"
+   
+   func main() {
+   	btprinter.PrintTree([]string{"animal", "dog", "cat", "Beagle", "Tottweiler", "Persian", "#"})
+   }
+   ```
 
+   ```
+            animal    
+              / \     
+             /   \    
+            /     \   
+           /       \  
+         dog       cat
+         / \       /  
+        /   \  Persian
+       /     \        
+      /       \       
+   Beagle Tottweiler  
+   
+   ```
 
-
-```go
-import "github.com/waiyva/binary-tree-printer"
-
-func main() {
-  btprinter.PrintTree("1,2,3,4,5,#,#,6,7,8,1,#,#,#,#,#,#,2,3,4,5,6,7,8,9,10,11,12,13,14,15")
-}
-```
-
-```
-        1              
-       / \             
-      2   3            
-     / \               
-    /   \              
-   4     5             
-  / \   / \            
- 6   7 8   1           
-          / \          
-         /   \         
-        /     \        
-       /       \       
-      /         \      
-     2           3     
-    / \         / \    
-   /   \       /   \   
-  4     5     6     7  
- / \   / \   / \   / \ 
-8   9 10 11 12 13 14 15
-
-```
-
-
+   
 
 
 
